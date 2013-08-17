@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Console_TCP_IP_client
 {
@@ -21,35 +17,43 @@ namespace Console_TCP_IP_client
                 // connected to the same address as specified by the server, port 
                 // combination.
                 Int32 port = 13000;
-                string message = "Test";
+                string message = "Test ";
 
                 TcpClient client = new TcpClient("127.0.0.1", port);
-
-                // Translate the passed message into ASCII and store it as a Byte array.
-                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
-
-                // Get a client stream for reading and writing. 
-                //  Stream stream = client.GetStream();
-
                 NetworkStream stream = client.GetStream();
 
-                // Send the message to the connected TcpServer. 
-                stream.Write(data, 0, data.Length);
+                for (int i = 0; i < 10; i++)
+                {
+                    // Translate the passed message into ASCII and store it as a Byte array.
+                    Byte[] data = System.Text.Encoding.ASCII.GetBytes(message + i.ToString());
 
-                Console.WriteLine("Sent: {0}", message);
+                    // Get a client stream for reading and writing. 
+                    //  Stream stream = client.GetStream();
 
-                // Receive the TcpServer.response. 
+                    
 
-                // Buffer to store the response bytes.
-                data = new Byte[256];
+                    // Send the message to the connected TcpServer. 
+                    stream.Write(data, 0, data.Length);
 
-                // String to store the response ASCII representation.
-                String responseData = String.Empty;
+                    Console.WriteLine("Sent: {0}", message);
 
-                // Read the first batch of the TcpServer response bytes.
-                Int32 bytes = stream.Read(data, 0, data.Length);
-                responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                Console.WriteLine("Received: {0}", responseData);
+                    // Receive the TcpServer.response. 
+
+                    // Buffer to store the response bytes.
+                    data = new Byte[256];
+
+                    // String to store the response ASCII representation.
+                    String responseData = String.Empty;
+
+                    // Read the first batch of the TcpServer response bytes.
+                    Int32 bytes = stream.Read(data, 0, data.Length);
+                    responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                    Console.WriteLine("Received: {0}", responseData);
+                    Thread.Sleep(1000);
+                    
+                }
+
+               
 
                 // Close everything.
                 stream.Close();
