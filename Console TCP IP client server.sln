@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console TCP IP server", "Console TCP IP client server\Console TCP IP server.csproj", "{DDB7E58B-AC74-437B-BBB4-F7DD56BFD1FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console TCP IP client", "Console TCP IP client\Console TCP IP client.csproj", "{CAEAA2C3-DB0E-4656-BA6E-0B9E18FC3EDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDB7E58B-AC74-437B-BBB4-F7DD56BFD1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB7E58B-AC74-437B-BBB4-F7DD56BFD1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB7E58B-AC74-437B-BBB4-F7DD56BFD1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB7E58B-AC74-437B-BBB4-F7DD56BFD1FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAEAA2C3-DB0E-4656-BA6E-0B9E18FC3EDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAEAA2C3-DB0E-4656-BA6E-0B9E18FC3EDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAEAA2C3-DB0E-4656-BA6E-0B9E18FC3EDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAEAA2C3-DB0E-4656-BA6E-0B9E18FC3EDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
